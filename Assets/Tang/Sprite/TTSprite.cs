@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace Tang
@@ -115,9 +115,9 @@ namespace Tang
       mr = GetComponent<MeshRenderer>();
       
 #if UNITY_EDITOR
-      realMaterialKey = mr.renderer.sharedMaterial.name;
+      realMaterialKey = mr.GetComponent<Renderer>().sharedMaterial.name;
 #else
-      realMaterialKey = mr.renderer.material.name;
+      realMaterialKey = mr.GetComponent<Renderer>().material.name;
 #endif
       halfTransparentMaterialKey = realMaterialKey + "_ht";
 
@@ -214,13 +214,13 @@ namespace Tang
 
     public void OnBecameHalfTransparent()
     {
-      mr.renderer.material = HalfTransparentMaterial;
+      mr.GetComponent<Renderer>().material = HalfTransparentMaterial;
       isReal = false;
     }
 
     public void OnBecameReal()
     {
-      mr.renderer.material = RealMaterial;
+      mr.GetComponent<Renderer>().material = RealMaterial;
       isReal = true;
     }
 
@@ -239,22 +239,22 @@ namespace Tang
       } else
         material = AssetCache.materialTable[key];
 
-      mr.renderer.material = material;
+      mr.GetComponent<Renderer>().material = material;
 
     }
 
     public void RevertSpecular()
     {
       if (isReal)
-        mr.renderer.material = RealMaterial;
+        mr.GetComponent<Renderer>().material = RealMaterial;
       else
-        mr.renderer.material = HalfTransparentMaterial;
+        mr.GetComponent<Renderer>().material = HalfTransparentMaterial;
     }
 
     private Material RealMaterial {
       get {
         if (!AssetCache.materialTable.ContainsKey(realMaterialKey)) {
-          Material realMaterial = mr.renderer.material;
+          Material realMaterial = mr.GetComponent<Renderer>().material;
           AssetCache.materialTable.Add(realMaterialKey, realMaterial);
           return realMaterial;
         } else

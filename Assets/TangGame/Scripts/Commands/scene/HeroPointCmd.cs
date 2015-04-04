@@ -1,4 +1,4 @@
-﻿///xbhuang
+///xbhuang
 /// <summary>
 /// 2013/11/8
 /// </summary>
@@ -22,7 +22,7 @@ namespace TangGame
 			if(myServerPointCube == null){
 				 myServerPointCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 				myServerPointCube.transform.localScale = Vector3.one * 5;
-				myServerPointCube.renderer.material.color = Color.red;
+				myServerPointCube.GetComponent<Renderer>().material.color = Color.red;
 			}
 			myServerPointCube.transform.position = TangUtils.GridUtil.PointToVector3(push.x, push.y);
 		}

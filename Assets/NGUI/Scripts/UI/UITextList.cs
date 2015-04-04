@@ -109,7 +109,7 @@ public class UITextList : MonoBehaviour
 	{
 		if (textLabel == null) textLabel = GetComponentInChildren<UILabel>();
 
-		Collider col = collider;
+		Collider col = GetComponent<Collider>();
 
 		if (col != null)
 		{

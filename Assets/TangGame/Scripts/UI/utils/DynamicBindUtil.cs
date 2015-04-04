@@ -41,7 +41,7 @@ public class DynamicBindUtil
 	public static MonoBehaviour BindScriptAndProperty(GameObject obj, string scriptName)
 	{
 		//首先将脚本和GameObject绑定
-		MonoBehaviour script = obj.AddComponent(scriptName) as MonoBehaviour;
+		MonoBehaviour script = UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(obj, "Assets/TangGame/Scripts/UI/utils/DynamicBindUtil.cs (44,26)", scriptName) as MonoBehaviour;
 		if (script == null)
 		{
 			Debug.LogError("bind " +scriptName + "faild");

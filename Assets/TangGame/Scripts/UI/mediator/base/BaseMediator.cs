@@ -82,7 +82,7 @@ namespace nh.ui.mediator
 			if (www == null)//如果www为空，表明当前加载的程序内部prefabs资源文件
 				assets = Resources.Load(GameConsts.PREFABS_PATH + m_PanelName);
 			else
-				assets = www.assetBundle.Load(m_PanelName);			
+				assets = www.assetBundle.LoadAsset(m_PanelName);			
 			m_Panel = BasePanelManager.Instance.GetPanel(m_PanelName, assets);
 			isLoad = true;	
 			this.Show(true);		

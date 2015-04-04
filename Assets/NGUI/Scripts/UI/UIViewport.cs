@@ -1,4 +1,4 @@
-﻿//----------------------------------------------
+//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2013 Tasharen Entertainment
 //----------------------------------------------
@@ -23,7 +23,7 @@ public class UIViewport : MonoBehaviour
 
 	void Start ()
 	{
-		mCam = camera;
+		mCam = GetComponent<Camera>();
 		if (sourceCamera == null) sourceCamera = Camera.main;
 	}
 

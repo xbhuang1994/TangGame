@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace TangGame
@@ -22,12 +22,12 @@ namespace TangGame
 				tmp.transform.parent = transform;
 				MeshFilter meshFilter = tmp.AddComponent<MeshFilter> ();
 				tmp.AddComponent<MeshRenderer> ();
-				meshFilter.transform.localPosition = f.renderer.transform.localPosition;
-				meshFilter.transform.localScale = f.renderer.transform.localScale;
+				meshFilter.transform.localPosition = f.GetComponent<Renderer>().transform.localPosition;
+				meshFilter.transform.localScale = f.GetComponent<Renderer>().transform.localScale;
 				meshFilter.mesh = f.mesh;
         Material material = new Material ( Shader.Find("Mobile/Tang/Transparent/UV_RGBA_Scale"));
-        material.mainTexture = f.renderer.material.mainTexture;
-        meshFilter.renderer.material = material;
+        material.mainTexture = f.GetComponent<Renderer>().material.mainTexture;
+        meshFilter.GetComponent<Renderer>().material = material;
 			}
 		}
 		
@@ -50,7 +50,7 @@ namespace TangGame
 		private void FadePlayer(float alpha){
 			MeshFilter[] filters = gameObject.GetComponentsInChildren<MeshFilter>();
 			foreach (MeshFilter f in filters) {
-        f.renderer.material.SetColor("_tangRGBA", new Vector4(1, 1, 1, alpha));
+        f.GetComponent<Renderer>().material.SetColor("_tangRGBA", new Vector4(1, 1, 1, alpha));
 			}
 		}
 	}

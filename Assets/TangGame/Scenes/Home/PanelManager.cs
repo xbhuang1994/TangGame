@@ -66,7 +66,7 @@ namespace TangGame
       Hashtable controls = new Hashtable ();
       ViewPanel panel = panelObject.GetComponent (panelObject.name) as ViewPanel;
       if (panel == null) {
-        panel = panelObject.AddComponent (panelObject.name) as ViewPanel;
+        panel = UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent (panelObject, "Assets/TangGame/Scenes/Home/PanelManager.cs (69,17)", panelObject.name) as ViewPanel;
       }
 
       if (panel == null)

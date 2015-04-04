@@ -89,7 +89,7 @@ namespace TangScene
       // the entire level at once.
       
       // What is the world position of the very upper right corner of the camera?
-      Vector3 upperRightCameraInWorld = camera.ViewportToWorldPoint (new Vector3 (1.0F, 1.0F, transform.position.y));
+      Vector3 upperRightCameraInWorld = GetComponent<Camera>().ViewportToWorldPoint (new Vector3 (1.0F, 1.0F, transform.position.y));
       
       // Find out how far outside the world the camera is right now.
       clampOffset.x = Mathf.Min (sceneBounds.xMax - upperRightCameraInWorld.x, 0.0F);
@@ -103,7 +103,7 @@ namespace TangScene
       // zoomed out too far for the level size, you will see past the right or top of the level.
       
       transform.position = goalPosition;
-      var lowerLeftCameraInWorld = camera.ViewportToWorldPoint (new Vector3 (0.0F, 0.0F, transform.position.y));
+      var lowerLeftCameraInWorld = GetComponent<Camera>().ViewportToWorldPoint (new Vector3 (0.0F, 0.0F, transform.position.y));
       
       // Find out how far outside the world the camera is right now.
       clampOffset.x = Mathf.Max ((sceneBounds.xMin - lowerLeftCameraInWorld.x), 0.0F);

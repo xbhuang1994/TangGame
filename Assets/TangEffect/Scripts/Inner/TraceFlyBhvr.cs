@@ -113,7 +113,7 @@ namespace TangEffect
 
     void OnTriggerEnter( Collider trigger )
     {
-      if( trigger == targetGobj.collider )
+      if( trigger == targetGobj.GetComponent<Collider>() )
 	{
 	  // 命中目标
 	  Cache.notificationQueue.Enqueue( new Notification( NtftNames.HIT, 

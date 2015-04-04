@@ -188,7 +188,7 @@ namespace Tang
     private IEnumerator OnSpriteAssetBundleChange()
     {
 
-      AssetBundleRequest request = spriteAssetBundle.LoadAsync( spriteName, typeof(TTSprite) );
+			AssetBundleRequest request = spriteAssetBundle.LoadAssetAsync( spriteName, typeof(TTSprite) );
       yield return request;
       
       spritePrefab = request.asset as TTSprite;

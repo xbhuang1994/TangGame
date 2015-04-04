@@ -7,8 +7,8 @@ namespace TangScene
   {
     void Start()
     {
-      camera.orthographic = true;
-      camera.orthographicSize = Screen.height / 2;
+      GetComponent<Camera>().orthographic = true;
+      GetComponent<Camera>().orthographicSize = Screen.height / 2;
     }
   }
 }

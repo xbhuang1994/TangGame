@@ -67,7 +67,7 @@ namespace TangScene
 	{
 	  foreach( string script in tsobj.scripts )
 	    {
-	      gobj.AddComponent(script);
+	      UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(gobj, "Assets/TangScene/Scripts/Inner/GameObjectFactory.cs (70,8)", script);
 	    }
 	}
 

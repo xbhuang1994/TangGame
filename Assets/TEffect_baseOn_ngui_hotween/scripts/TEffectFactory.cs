@@ -381,9 +381,9 @@ namespace zyhd.TEffect{
 			GameObject textObj = GameObject.Instantiate (MyCache.root.GetComponent<TEffectController>().prefab) as GameObject;
 			textObj.transform.parent = eff.target.transform;
 			textObj.transform.position = temp;
-			textObj.guiText.fontSize = eff.fontsize;
-			textObj.guiText.text = "<color=\""+eff.color+"\">"+eff.msg+"</color>";
-			textObj.guiText.pixelOffset = eff.offset2;
+			textObj.GetComponent<GUIText>().fontSize = eff.fontsize;
+			textObj.GetComponent<GUIText>().text = "<color=\""+eff.color+"\">"+eff.msg+"</color>";
+			textObj.GetComponent<GUIText>().pixelOffset = eff.offset2;
 			MyCache.texts.Add (eff,textObj);
 		}
 		

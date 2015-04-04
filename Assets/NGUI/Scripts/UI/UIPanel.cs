@@ -524,7 +524,7 @@ public class UIPanel : MonoBehaviour
 	void OnEnable ()
 	{
 		// Apparently having a rigidbody helps
-		if (rigidbody == null)
+		if (GetComponent<Rigidbody>() == null)
 		{
 			Rigidbody rb = gameObject.AddComponent<Rigidbody>();
 			rb.isKinematic = true;

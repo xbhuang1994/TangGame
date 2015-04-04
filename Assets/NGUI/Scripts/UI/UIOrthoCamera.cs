@@ -1,4 +1,4 @@
-﻿//----------------------------------------------
+//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2013 Tasharen Entertainment
 //----------------------------------------------
@@ -22,7 +22,7 @@ public class UIOrthoCamera : MonoBehaviour
 
 	void Start ()
 	{
-		mCam = camera;
+		mCam = GetComponent<Camera>();
 		mTrans = transform;
 		mCam.orthographic = true;
 	}
